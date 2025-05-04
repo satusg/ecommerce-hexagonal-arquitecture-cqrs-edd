@@ -1,4 +1,4 @@
-import { BaseError } from "src/shared/domain/errors/base.error";
+import { BaseError } from "../../../shared/domain/errors/base.error";
 
 export class InvalidUserPasswordError extends BaseError {
     constructor(reason = 'Password must be at least 8 characters') {

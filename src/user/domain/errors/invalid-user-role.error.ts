@@ -1,4 +1,4 @@
-import { BaseError } from "src/shared/domain/errors/base.error";
+import { BaseError } from "../../../shared/domain/errors/base.error";
 
 export class InvalidUserRoleError extends BaseError {
     constructor(role: string) {

@@ -1,5 +1,4 @@
-// src/user/domain/repositories/user.repository.ts
-import User from '../entitites/user.entity';
+import {User} from '../entitites/user.entity';
 import { UserId } from '../value-objects/user-id.vo';
 
 export type UserRepository = {

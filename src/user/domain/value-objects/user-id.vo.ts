@@ -1,4 +1,4 @@
-import UUID from "src/shared/domain/value-objects/uuid.vo";
+import UUID from "../../../shared/domain/value-objects/uuid.vo"
 
 export class UserId {
     private constructor(private readonly value: UUID) { }

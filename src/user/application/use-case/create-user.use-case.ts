@@ -1,14 +1,14 @@
-import { UserId } from 'src/user/domain/value-objects/user-id.vo';
-import { UserName } from 'src/user/domain/value-objects/user-name.vo';
-import { UserEmail } from 'src/user/domain/value-objects/user-email.vo';
-import { UserPassword } from 'src/user/domain/value-objects/user-password.vo';
-import { UserRole } from 'src/user/domain/value-objects/user-role.vo';
-import { UserRepository } from 'src/user/domain/interfaces/UserRepository.interface';
-import {User} from 'src/user/domain/entitites/user.entity';
-import { UserCreatedAt } from 'src/user/domain/value-objects/user-created-at.vo';
-import { UserUpdatedAt } from 'src/user/domain/value-objects/user-updated-at.vo';
+import { UserId } from '../../domain/value-objects/user-id.vo';
+import { UserName } from '../../domain/value-objects/user-name.vo';
+import { UserEmail } from '../../domain/value-objects/user-email.vo';
+import { UserPassword } from '../../domain/value-objects/user-password.vo';
+import { UserRole } from '../../domain/value-objects/user-role.vo';
+import { UserRepository } from '../../domain/interfaces/UserRepository.interface';
+import {User} from '../../domain/entitites/user.entity';
+import { UserCreatedAt } from '../../domain/value-objects/user-created-at.vo';
+import { UserUpdatedAt } from '../../domain/value-objects/user-updated-at.vo';
 import { EventBus } from '@nestjs/cqrs';
-import { UserCreatedEvent } from 'src/user/domain/events/user-created.event';
+import { UserCreatedEvent } from '../../domain/events/user-created.event';
 import { Inject } from '@nestjs/common';
 
 export class CreateUserUseCase {

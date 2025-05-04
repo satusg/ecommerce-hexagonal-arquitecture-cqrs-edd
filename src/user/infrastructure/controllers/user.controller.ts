@@ -1,14 +1,14 @@
 // src/user/infrastructure/controllers/user.controller.ts
 import { Controller, Post, Body, Get, Param, NotFoundException, HttpStatus, HttpCode, Header } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateUserDto } from 'src/user/application/dto/create-user.dto';
-import { CreateUserCommand } from 'src/user/application/commands/create-user.command';
-import { GetUserByIdQuery } from 'src/user/application/queries/get-user-by-id.query';
-import { UserNotFoundError } from 'src/user/domain/errors/user-not-found.error';
-import { UserListDto } from 'src/user/application/dto/user-list.dto';
-import { ListUsersQuery } from 'src/user/application/queries/list-users.query';
-import { UserResponseDto } from 'src/user/application/dto/user-response.dto';
-import { UserMapper } from 'src/user/application/mapper/user.mapper';
+import { CreateUserDto } from '../../application/dto/create-user.dto';
+import { CreateUserCommand } from '../../application/commands/create-user.command';
+import { GetUserByIdQuery } from '../../application/queries/get-user-by-id.query';
+import { ListUsersQuery } from '../../application/queries/list-users.query';
+import { UserResponseDto } from '../../application/dto/user-response.dto';
+import { UserListDto } from '../../application/dto/user-list.dto';
+import { UserMapper } from '../../application/mapper/user.mapper';
+import { UserNotFoundError } from '../../domain/errors/user-not-found.error'
 
 @Controller('users')
 export class UserController {
@@ -19,7 +19,8 @@ export class UserController {
 
     @Post()
     @HttpCode(HttpStatus.CREATED)
-    async createUser(@Body() dto: CreateUserDto): Promise<void> {
+    async createUser(@Body() dto: any): Promise<void> {
+        console.log(dto);
         const command = new CreateUserCommand(
             dto.id,
             dto.firstName,

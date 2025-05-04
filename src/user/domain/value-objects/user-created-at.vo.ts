@@ -1,4 +1,4 @@
-import { CreatedAt } from "src/shared/domain/value-objects/created-at.vo";
+import { CreatedAt } from "../../../shared/domain/value-objects/created-at.vo";
 
 export class UserCreatedAt {
     private constructor(private readonly value: CreatedAt) { }
