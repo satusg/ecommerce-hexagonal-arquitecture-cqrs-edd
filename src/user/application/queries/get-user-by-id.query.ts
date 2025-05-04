@@ -1,3 +1,3 @@
 export class GetUserByIdQuery {
-    constructor(readonly id: string){ }
+    constructor(readonly id: string) { }
 }

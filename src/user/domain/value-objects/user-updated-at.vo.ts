@@ -1,7 +1,7 @@
 import { UpdatedAt } from "src/shared/domain/value-objects/updated-at.vo";
 
 export class UserUpdatedAt {
-    private constructor(private readonly value: UpdatedAt) {}
+    private constructor(private readonly value: UpdatedAt) { }
     static now(): UserUpdatedAt {
         return new UserUpdatedAt(UpdatedAt.now());
     }

@@ -2,9 +2,9 @@
 import User from '../entitites/user.entity';
 import { UserId } from '../value-objects/user-id.vo';
 
-export default interface UserRepository {
+export type UserRepository = {
   save(user: User): Promise<void>;
   delete(user: User): Promise<void>;
   getById(userId: UserId): Promise<User | null>;
   getAll(): Promise<User[]>;
-}
+};

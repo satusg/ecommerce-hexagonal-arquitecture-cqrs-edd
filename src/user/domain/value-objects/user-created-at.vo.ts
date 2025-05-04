@@ -1,7 +1,7 @@
 import { CreatedAt } from "src/shared/domain/value-objects/created-at.vo";
 
 export class UserCreatedAt {
-    private constructor(private readonly value: CreatedAt) {}
+    private constructor(private readonly value: CreatedAt) { }
     static now(): UserCreatedAt {
         return new UserCreatedAt(CreatedAt.now());
     }

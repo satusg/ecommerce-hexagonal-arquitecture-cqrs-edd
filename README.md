@@ -13,6 +13,7 @@ cd ecommerce
 pnpm install @nestjs/cqrs
 pnpm install @nestjs/event-emitter
 pnpm install uuid
+pnpm install class-validator class-transformer
 ```
 ## Example src/ folder structure
 ![alt text](image.png)
@@ -84,7 +85,7 @@ src/
 Creation of the ```UUID``` which is an implemtnation to encapsulate the ```uuid``` libary.
 
 Creation of the ```base.error.ts``` which will be used by all the other errors so they must implement the message and have a common structure:
-- ```message````
+- ```message````ﬂ
 - ```statusCode````
 - ```cause`````
 
