@@ -1,1 +1,1 @@
-class ListUsersQuery { }
+export class ListUsersQuery { }
