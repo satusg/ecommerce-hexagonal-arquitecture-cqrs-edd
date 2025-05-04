@@ -37,13 +37,15 @@ export class UserController {
             u.getId().toString(),
             u.getName().toString(),
             u.getEmail().toString(),
-            u.getRole().toString()
+            u.getRole().toString(),
+            u.getCreatedAt().toISOString(),
+            u.getUpdatedAt().toISOString(),
         ));
         return new UserListDto(dtos);
     }
 
     @Get(':id')
-    async getUser(@Param('id') id: string) {
+    async getUser(@Param('id') id: string): Promise<UserResponseDto> {
         const query = new GetUserByIdQuery(id);
         try {
             const user = await this.queryBus.execute(query);
@@ -54,6 +56,7 @@ export class UserController {
                 email: user.getEmail().toString(),
                 role: user.getRole().toString(),
                 createdAt: user.getCreatedAt().toISOString(),
+                updatedAt: user.getUpdatedAt().toISOString()
             };
         } catch (error) {
             if (error instanceof UserNotFoundError) {
