@@ -7,6 +7,8 @@ import { GetUserByIdHandler } from '../application/queries/handlers/get-user-by-
 // Infrastructure Layer
 import { UserController } from '../infrastructure/controllers/user.controller';
 import { InMemoryUserRepository } from './repositories/user.in-memory.repository';
+import { CreateUserUseCase } from '../application/use-case/create-user.use-case';
+import { GetUserByIdUseCase } from '../application/use-case/get-user-by-id.use-case';
 
 @Module({
     imports: [CqrsModule],
@@ -17,6 +19,14 @@ import { InMemoryUserRepository } from './repositories/user.in-memory.repository
         {
             provide: 'UserRepository',
             useClass: InMemoryUserRepository,
+        },
+        {
+            provide: 'CreateUserUseCase',
+            useClass: CreateUserUseCase
+        },
+        {
+            provide: 'GetUserByIdUseCase',
+            useClass: GetUserByIdUseCase
         }
     ],
 })
