@@ -1,5 +1,4 @@
-import { InvalidUserRoleError } from "../errors/invaliud-user-role.error";
-
+import { InvalidUserRoleError } from "../errors/invalid-user-role.error";
 export type ValidUserRole = 'admin' | 'customer';
 
 export class UserRole {
