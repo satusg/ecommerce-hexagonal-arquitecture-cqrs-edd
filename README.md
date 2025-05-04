@@ -90,7 +90,6 @@ Creation of the ```base.error.ts``` which will be used by all the other errors s
 
 Creation of the ```invalid-uuid.error.ts``` which will be throwed when an invalid uuid has been provided ad so an UUID can't be created.
 
-
 For the implementation of the ```users``` folder within the ```src``` folder I have followed the steps described below:
 - We define users.entity.ts within ```src/user/domain/entities/user.entity.ts```
 - We define the value-objects related to the entity created.
@@ -100,9 +99,7 @@ For the implementation of the ```users``` folder within the ```src``` folder I h
   ```src/user/domain/value-objects/userName.vo.ts```
   - UserEmail => String \
   ```src/user/domain/value-objects/userEmail.vo.ts```
-  - UserCreationDate => TimeStamp \
-  ```src/user/domain/value-objects/userCreationDate.vo.ts```
-  
+  - .....
 - Create the UserRepository Interface. \
  ```src/user/domain/interfaces/UserRepository.interface.ts```
 - 
