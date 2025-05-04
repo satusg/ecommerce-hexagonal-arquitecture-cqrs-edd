@@ -1,5 +1,5 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
-import User from 'src/user/domain/entitites/user.entity';
+import {User} from 'src/user/domain/entitites/user.entity';
 import { ListUsersUseCase } from '../../use-case/list-users.use-case';
 import { ListUsersQuery } from '../list-users.query';
 

@@ -8,6 +8,7 @@ import { UserNotFoundError } from 'src/user/domain/errors/user-not-found.error';
 import { UserListDto } from 'src/user/application/dto/user-list.dto';
 import { ListUsersQuery } from 'src/user/application/queries/list-users.query';
 import { UserResponseDto } from 'src/user/application/dto/user-response.dto';
+import { UserMapper } from 'src/user/application/mapper/user.mapper';
 
 @Controller('users')
 export class UserController {
@@ -33,15 +34,7 @@ export class UserController {
     @Get()
     async listUsers(): Promise<UserListDto> {
         const users = await this.queryBus.execute(new ListUsersQuery());
-        const dtos = users.map(u => new UserResponseDto(
-            u.getId().toString(),
-            u.getName().toString(),
-            u.getEmail().toString(),
-            u.getRole().toString(),
-            u.getCreatedAt().toISOString(),
-            u.getUpdatedAt().toISOString(),
-        ));
-        return new UserListDto(dtos);
+        return UserMapper.toListDto(users);
     }
 
     @Get(':id')
@@ -49,15 +42,7 @@ export class UserController {
         const query = new GetUserByIdQuery(id);
         try {
             const user = await this.queryBus.execute(query);
-
-            return {
-                id: user.getId().toString(),
-                name: user.getName().toString(),
-                email: user.getEmail().toString(),
-                role: user.getRole().toString(),
-                createdAt: user.getCreatedAt().toISOString(),
-                updatedAt: user.getUpdatedAt().toISOString()
-            };
+            return UserMapper.toResponseDto(user);
         } catch (error) {
             if (error instanceof UserNotFoundError) {
                 throw new NotFoundException(error.message);

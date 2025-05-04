@@ -1,5 +1,5 @@
 // src/user/infrastructure/repositories/in-memory-user.repository.ts
-import User from 'src/user/domain/entitites/user.entity';
+import {User} from 'src/user/domain/entitites/user.entity';
 import { UserRepository } from 'src/user/domain/interfaces/UserRepository.interface';
 import { UserId } from 'src/user/domain/value-objects/user-id.vo';
 import { Injectable } from '@nestjs/common';

@@ -6,7 +6,7 @@ import { UserRole } from '../value-objects/user-role.vo';
 import { UserCreatedAt } from '../value-objects/user-created-at.vo';
 import { UserUpdatedAt } from '../value-objects/user-updated-at.vo';
 
-export default class User {
+export class User {
   private constructor(
     private readonly id: UserId,
     private readonly name: UserName,

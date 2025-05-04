@@ -2,7 +2,7 @@ import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 
 import { GetUserByIdQuery } from '../get-user-by-id.query';
 import { GetUserByIdUseCase } from '../../use-case/get-user-by-id.use-case';
-import User from 'src/user/domain/entitites/user.entity';
+import {User} from 'src/user/domain/entitites/user.entity';
 
 @QueryHandler(GetUserByIdQuery)
 export class GetUserByIdHandler implements IQueryHandler<GetUserByIdQuery> {
